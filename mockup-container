@@ -1,0 +1,53 @@
+/* Animation for phone mockup */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.device-mockup {
+  position: relative;
+  display: inline-block;
+  animation: bounce 2s infinite;
+  transition: transform 0.5s ease-in-out;
+}
+
+.device-mockup:hover {
+  transform: scale(1.05);
+}
+
+/* Optional: Enhance the phone appearance */
+.device-mockup {
+  border: 2px solid #ddd;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a glow effect to the phone screen on hover */
+.device-mockup::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.device-mockup:hover::before {
+  opacity: 1;
+}
